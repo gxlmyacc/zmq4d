@@ -1,0 +1,264 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{706D7146-060C-40FE-8CEC-83601CD7A18E}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="Src\Zmq4D.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="tests\tests.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld\test1_hwclient.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld\test1_hwserver.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld2\test2_hwclient.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld2\test2_hwserver.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld3\test3_hwClient.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld3\test3_hwServer.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld4\test4_Broker.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld4\test4_BrokerGUI.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld4\test4_Client.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\HelloWorld4\test4_Server.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PubSub\test5_publisher.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PubSub\test5_subscriber.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PushPull\test6_sink.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PushPull\test6_ventilator.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PushPull\test6_worker.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PushPull2\test7_sink.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PushPull2\test7_ventilator.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Demos\PushPull2\test7_worker.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="Zmq4D">
+			<MSBuild Projects="Src\Zmq4D.dproj"/>
+		</Target>
+		<Target Name="Zmq4D:Clean">
+			<MSBuild Targets="Clean" Projects="Src\Zmq4D.dproj"/>
+		</Target>
+		<Target Name="Zmq4D:Make">
+			<MSBuild Targets="Make" Projects="Src\Zmq4D.dproj"/>
+		</Target>
+		<Target Name="tests">
+			<MSBuild Projects="tests\tests.dproj"/>
+		</Target>
+		<Target Name="tests:Clean">
+			<MSBuild Targets="Clean" Projects="tests\tests.dproj"/>
+		</Target>
+		<Target Name="tests:Make">
+			<MSBuild Targets="Make" Projects="tests\tests.dproj"/>
+		</Target>
+		<Target Name="test1_hwclient">
+			<MSBuild Projects="Demos\HelloWorld\test1_hwclient.dproj"/>
+		</Target>
+		<Target Name="test1_hwclient:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld\test1_hwclient.dproj"/>
+		</Target>
+		<Target Name="test1_hwclient:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld\test1_hwclient.dproj"/>
+		</Target>
+		<Target Name="test1_hwserver">
+			<MSBuild Projects="Demos\HelloWorld\test1_hwserver.dproj"/>
+		</Target>
+		<Target Name="test1_hwserver:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld\test1_hwserver.dproj"/>
+		</Target>
+		<Target Name="test1_hwserver:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld\test1_hwserver.dproj"/>
+		</Target>
+		<Target Name="test2_hwclient">
+			<MSBuild Projects="Demos\HelloWorld2\test2_hwclient.dproj"/>
+		</Target>
+		<Target Name="test2_hwclient:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld2\test2_hwclient.dproj"/>
+		</Target>
+		<Target Name="test2_hwclient:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld2\test2_hwclient.dproj"/>
+		</Target>
+		<Target Name="test2_hwserver">
+			<MSBuild Projects="Demos\HelloWorld2\test2_hwserver.dproj"/>
+		</Target>
+		<Target Name="test2_hwserver:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld2\test2_hwserver.dproj"/>
+		</Target>
+		<Target Name="test2_hwserver:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld2\test2_hwserver.dproj"/>
+		</Target>
+		<Target Name="test3_hwClient">
+			<MSBuild Projects="Demos\HelloWorld3\test3_hwClient.dproj"/>
+		</Target>
+		<Target Name="test3_hwClient:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld3\test3_hwClient.dproj"/>
+		</Target>
+		<Target Name="test3_hwClient:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld3\test3_hwClient.dproj"/>
+		</Target>
+		<Target Name="test3_hwServer">
+			<MSBuild Projects="Demos\HelloWorld3\test3_hwServer.dproj"/>
+		</Target>
+		<Target Name="test3_hwServer:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld3\test3_hwServer.dproj"/>
+		</Target>
+		<Target Name="test3_hwServer:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld3\test3_hwServer.dproj"/>
+		</Target>
+		<Target Name="test4_Broker">
+			<MSBuild Projects="Demos\HelloWorld4\test4_Broker.dproj"/>
+		</Target>
+		<Target Name="test4_Broker:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld4\test4_Broker.dproj"/>
+		</Target>
+		<Target Name="test4_Broker:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld4\test4_Broker.dproj"/>
+		</Target>
+		<Target Name="test4_BrokerGUI">
+			<MSBuild Projects="Demos\HelloWorld4\test4_BrokerGUI.dproj"/>
+		</Target>
+		<Target Name="test4_BrokerGUI:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld4\test4_BrokerGUI.dproj"/>
+		</Target>
+		<Target Name="test4_BrokerGUI:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld4\test4_BrokerGUI.dproj"/>
+		</Target>
+		<Target Name="test4_Client">
+			<MSBuild Projects="Demos\HelloWorld4\test4_Client.dproj"/>
+		</Target>
+		<Target Name="test4_Client:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld4\test4_Client.dproj"/>
+		</Target>
+		<Target Name="test4_Client:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld4\test4_Client.dproj"/>
+		</Target>
+		<Target Name="test4_Server">
+			<MSBuild Projects="Demos\HelloWorld4\test4_Server.dproj"/>
+		</Target>
+		<Target Name="test4_Server:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\HelloWorld4\test4_Server.dproj"/>
+		</Target>
+		<Target Name="test4_Server:Make">
+			<MSBuild Targets="Make" Projects="Demos\HelloWorld4\test4_Server.dproj"/>
+		</Target>
+		<Target Name="test5_publisher">
+			<MSBuild Projects="Demos\PubSub\test5_publisher.dproj"/>
+		</Target>
+		<Target Name="test5_publisher:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PubSub\test5_publisher.dproj"/>
+		</Target>
+		<Target Name="test5_publisher:Make">
+			<MSBuild Targets="Make" Projects="Demos\PubSub\test5_publisher.dproj"/>
+		</Target>
+		<Target Name="test5_subscriber">
+			<MSBuild Projects="Demos\PubSub\test5_subscriber.dproj"/>
+		</Target>
+		<Target Name="test5_subscriber:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PubSub\test5_subscriber.dproj"/>
+		</Target>
+		<Target Name="test5_subscriber:Make">
+			<MSBuild Targets="Make" Projects="Demos\PubSub\test5_subscriber.dproj"/>
+		</Target>
+		<Target Name="test6_sink">
+			<MSBuild Projects="Demos\PushPull\test6_sink.dproj"/>
+		</Target>
+		<Target Name="test6_sink:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PushPull\test6_sink.dproj"/>
+		</Target>
+		<Target Name="test6_sink:Make">
+			<MSBuild Targets="Make" Projects="Demos\PushPull\test6_sink.dproj"/>
+		</Target>
+		<Target Name="test6_ventilator">
+			<MSBuild Projects="Demos\PushPull\test6_ventilator.dproj"/>
+		</Target>
+		<Target Name="test6_ventilator:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PushPull\test6_ventilator.dproj"/>
+		</Target>
+		<Target Name="test6_ventilator:Make">
+			<MSBuild Targets="Make" Projects="Demos\PushPull\test6_ventilator.dproj"/>
+		</Target>
+		<Target Name="test6_worker">
+			<MSBuild Projects="Demos\PushPull\test6_worker.dproj"/>
+		</Target>
+		<Target Name="test6_worker:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PushPull\test6_worker.dproj"/>
+		</Target>
+		<Target Name="test6_worker:Make">
+			<MSBuild Targets="Make" Projects="Demos\PushPull\test6_worker.dproj"/>
+		</Target>
+		<Target Name="test7_sink">
+			<MSBuild Projects="Demos\PushPull2\test7_sink.dproj"/>
+		</Target>
+		<Target Name="test7_sink:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PushPull2\test7_sink.dproj"/>
+		</Target>
+		<Target Name="test7_sink:Make">
+			<MSBuild Targets="Make" Projects="Demos\PushPull2\test7_sink.dproj"/>
+		</Target>
+		<Target Name="test7_ventilator">
+			<MSBuild Projects="Demos\PushPull2\test7_ventilator.dproj"/>
+		</Target>
+		<Target Name="test7_ventilator:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PushPull2\test7_ventilator.dproj"/>
+		</Target>
+		<Target Name="test7_ventilator:Make">
+			<MSBuild Targets="Make" Projects="Demos\PushPull2\test7_ventilator.dproj"/>
+		</Target>
+		<Target Name="test7_worker">
+			<MSBuild Projects="Demos\PushPull2\test7_worker.dproj"/>
+		</Target>
+		<Target Name="test7_worker:Clean">
+			<MSBuild Targets="Clean" Projects="Demos\PushPull2\test7_worker.dproj"/>
+		</Target>
+		<Target Name="test7_worker:Make">
+			<MSBuild Targets="Make" Projects="Demos\PushPull2\test7_worker.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="Zmq4D;tests;test1_hwclient;test1_hwserver;test2_hwclient;test2_hwserver;test3_hwClient;test3_hwServer;test4_Broker;test4_BrokerGUI;test4_Client;test4_Server;test5_publisher;test5_subscriber;test6_sink;test6_ventilator;test6_worker;test7_sink;test7_ventilator;test7_worker"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="Zmq4D:Clean;tests:Clean;test1_hwclient:Clean;test1_hwserver:Clean;test2_hwclient:Clean;test2_hwserver:Clean;test3_hwClient:Clean;test3_hwServer:Clean;test4_Broker:Clean;test4_BrokerGUI:Clean;test4_Client:Clean;test4_Server:Clean;test5_publisher:Clean;test5_subscriber:Clean;test6_sink:Clean;test6_ventilator:Clean;test6_worker:Clean;test7_sink:Clean;test7_ventilator:Clean;test7_worker:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="Zmq4D:Make;tests:Make;test1_hwclient:Make;test1_hwserver:Make;test2_hwclient:Make;test2_hwserver:Make;test3_hwClient:Make;test3_hwServer:Make;test4_Broker:Make;test4_BrokerGUI:Make;test4_Client:Make;test4_Server:Make;test5_publisher:Make;test5_subscriber:Make;test6_sink:Make;test6_ventilator:Make;test6_worker:Make;test7_sink:Make;test7_ventilator:Make;test7_worker:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

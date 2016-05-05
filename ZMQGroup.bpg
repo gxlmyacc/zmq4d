@@ -1,0 +1,81 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Zmq4D.dll tests.exe test1_hwclient.exe test1_hwserver.exe \
+  test2_hwclient.exe test2_hwserver.exe test3_hwClient.exe test3_hwServer.exe \
+  test4_Broker.exe test4_BrokerGUI.exe test4_Client.exe test4_Server.exe \
+  test5_publisher.exe test5_subscriber.exe test6_sink.exe test6_ventilator.exe \
+  test6_worker.exe test7_sink.exe test7_ventilator.exe test7_worker.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Zmq4D.dll: Src\Zmq4D.dpr
+  $(DCC)
+
+tests.exe: tests\tests.dpr
+  $(DCC)
+
+test1_hwclient.exe: Demos\HelloWorld\test1_hwclient.dpr
+  $(DCC)
+
+test1_hwserver.exe: Demos\HelloWorld\test1_hwserver.dpr
+  $(DCC)
+
+test2_hwclient.exe: Demos\HelloWorld2\test2_hwclient.dpr
+  $(DCC)
+
+test2_hwserver.exe: Demos\HelloWorld2\test2_hwserver.dpr
+  $(DCC)
+
+test3_hwClient.exe: Demos\HelloWorld3\test3_hwClient.dpr
+  $(DCC)
+
+test3_hwServer.exe: Demos\HelloWorld3\test3_hwServer.dpr
+  $(DCC)
+
+test4_Broker.exe: Demos\HelloWorld4\test4_Broker.dpr
+  $(DCC)
+
+test4_BrokerGUI.exe: Demos\HelloWorld4\test4_BrokerGUI.dpr
+  $(DCC)
+
+test4_Client.exe: Demos\HelloWorld4\test4_Client.dpr
+  $(DCC)
+
+test4_Server.exe: Demos\HelloWorld4\test4_Server.dpr
+  $(DCC)
+
+test5_publisher.exe: Demos\PubSub\test5_publisher.dpr
+  $(DCC)
+
+test5_subscriber.exe: Demos\PubSub\test5_subscriber.dpr
+  $(DCC)
+
+test6_sink.exe: Demos\PushPull\test6_sink.dpr
+  $(DCC)
+
+test6_ventilator.exe: Demos\PushPull\test6_ventilator.dpr
+  $(DCC)
+
+test6_worker.exe: Demos\PushPull\test6_worker.dpr
+  $(DCC)
+
+test7_sink.exe: Demos\PushPull2\test7_sink.dpr
+  $(DCC)
+
+test7_ventilator.exe: Demos\PushPull2\test7_ventilator.dpr
+  $(DCC)
+
+test7_worker.exe: Demos\PushPull2\test7_worker.dpr
+  $(DCC)
+
+
