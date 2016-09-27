@@ -381,10 +381,13 @@ var
 
 function ZAPI: TZMQAPI;
 
+procedure Trace(const ALog: string);
+procedure TraceError(const ALog: string);
+procedure TraceException(const ALog: string);
+
+
 implementation
 
-uses
-  f_DebugIntf;
 
 var
   varZAPI: TZMQAPI;
@@ -397,6 +400,52 @@ begin
     Assert(varZAPI.LoadDLL(varDriverFile));
   end;
   Result := varZAPI;
+end;
+
+var
+  varLock: TRTLCriticalSection;
+procedure Trace(const ALog: string);
+var
+  f: textfile;
+  sLogFile: string;
+begin
+  EnterCriticalSection(varLock);
+  try
+    if {$WARNINGS OFF} DebugHook = 1 {$WARNINGS ON} then
+      OutputDebugString(PChar(ALog))
+    else
+    try                    
+      sLogFile := ChangeFileExt(ParamStr(0), '_' + DateToStr(Now) + '.log');
+      ForceDirectories(ExtractFilePath(sLogFile));
+      AssignFile(f, sLogFile);
+      try
+        if FileExists(sLogFile) then
+          Append(f)
+        else
+          Rewrite(f);
+        Writeln(f, Format('【%s】%s', [DateTimeToStr(Now), ALog]));
+      finally
+        CloseFile(f);
+      end;
+    except
+      on e: Exception do
+      begin
+        OutputDebugString(PChar('[_NativeTrace]'+e.Message));
+      end;
+    end;
+  finally
+    LeaveCriticalSection(varLock);
+  end;
+end;
+
+procedure TraceError(const ALog: string);
+begin
+  Trace('[error]'+ALog);
+end;
+
+procedure TraceException(const ALog: string);
+begin
+  Trace('[exception]'+ALog);
 end;
         
 { TZMQAPI }
@@ -457,7 +506,7 @@ begin
       if not FileExists(sDriverFile) then
       begin
         FLastError := Format('[%s]组件不存在！', [sDriverFile]);
-        Log(FLastError);
+        TraceError(FLastError);
         Exit;    
       end;
       FDLLHandle := LoadLibrary(PChar(sDriverFile));
@@ -588,9 +637,11 @@ begin
 end;
 
 initialization
+  InitializeCriticalSection(varLock);
 
 finalization
   if varZAPI <> nil then
     FreeAndNil(varZAPI);
-
+  DeleteCriticalSection(varLock);
+  
 end.

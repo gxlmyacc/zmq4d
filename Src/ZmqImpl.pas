@@ -597,9 +597,6 @@ function IntToZMQPollEvents(const events: Integer): TZMQPollEvents;
 
 implementation
 
-uses
-  f_DebugIntf;
-
 var
   varContexts: TList;
   varZMQManager: IZMQMananger;
